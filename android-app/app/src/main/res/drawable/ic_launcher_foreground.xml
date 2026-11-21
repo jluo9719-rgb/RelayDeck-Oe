@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Subtle inner terminal frame -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M24,24 L84,24 Q86,24 86,26 L86,82 Q86,84 84,84 L24,84 Q22,84 22,82 L22,26 Q22,24 24,24 Z" />
+    <!-- Amber prompt chevron (>) -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M34,42 L48,54 L34,66"
+        android:strokeWidth="6.5"
+        android:strokeColor="#F59E0B"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <!-- Emerald cursor bar (_) -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,66 L74,66"
+        android:strokeWidth="6.5"
+        android:strokeColor="#10B981"
+        android:strokeLineCap="round" />
+    <!-- Cyan live indicator dot -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M71,37 A4.5,4.5 0 1,0 71,46 A4.5,4.5 0 1,0 71,37 Z" />
+</vector>

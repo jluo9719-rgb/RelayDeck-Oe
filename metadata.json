@@ -1,0 +1,6 @@
+{
+  "name": "RelayDeck",
+  "description": "面向 Windows 本地 Claude Code 与 Codex CLI 的移动端 PWA 远程控制台，支持 Cloudflare Tunnel 与 Access 安全接入、流式日志、代码 Diff 审查与手机端审批确认。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

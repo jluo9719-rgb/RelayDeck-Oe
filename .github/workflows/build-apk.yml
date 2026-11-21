@@ -1,0 +1,46 @@
+name: Build RelayDeck Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - 'android-app/**'
+      - '.github/workflows/build-apk.yml'
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+
+      - name: Accept Android SDK licenses
+        run: yes | "${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null 2>&1 || true
+
+      - name: Build RelayDeck APK
+        working-directory: android-app
+        run: gradle assembleDebug --no-daemon
+
+      - name: Prepare APK artifact
+        run: cp android-app/app/build/outputs/apk/debug/app-debug.apk RelayDeck.apk
+
+      - name: Upload RelayDeck APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: RelayDeck-APK
+          path: RelayDeck.apk
+          retention-days: 30
